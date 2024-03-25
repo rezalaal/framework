@@ -272,4 +272,16 @@ class Number
             throw new RuntimeException('The "intl" PHP extension is required to use the ['.$method.'] method.');
         }
     }
+
+    /**
+     * Create random number with $length digits.
+     * @param int $length
+     * @return int
+     */
+    public static function createRandomNumber(int $length): int
+    {
+        $min = pow(10, $length - 1);
+        $max = pow(10, $length) - 1;
+        return random_int($min, $max);
+    }
 }
